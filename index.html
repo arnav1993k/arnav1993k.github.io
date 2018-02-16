@@ -1,9 +1,342 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Welcome to my page</title>
-</head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url("img/backgroud.jpg");
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("img/aggiering.jpg");
+    min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("/w3images/parallax3.jpg");
+    min-height: 400px;
+}
+
+.w3-wide {
+    letter-spacing: 10px;
+}
+
+.w3-hover-opacity {
+    cursor: pointer;
+}
+#first-message{
+    -webkit-animation-name: changeOpacity; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 0s;
+    animation-name: changeOpacity;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    opacity:0;
+    z-index: 1;
+    position: absolute;
+    color: black;
+}
+#second-message{
+    -webkit-animation-name: changeOpacity; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 4s;
+    animation-name: changeOpacity;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    opacity:0;
+    z-index: 2;
+    position: absolute;
+    left:-71px;
+    color: black;
+}
+#third-message{
+    -webkit-animation-name: lastOpacity; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 8s;
+    opacity:0;
+    animation-name: lastOpacity;
+    animation-duration: 4s;
+    animation-delay: 8s;
+    z-index: 3;
+    position: absolute;
+    left: -154px;
+    color: black;
+}
+@-webkit-keyframes changeOpacity {
+    0% {opacity:  0;}
+    50%  {opacity: 100;}
+    100% {opacity: 0;}
+}
+
+/* Standard syntax */
+@keyframes changeOpacity {
+    0% {opacity:  0;}
+    50%  {opacity: 100;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes lastOpacity {
+    0% {opacity:  0;}
+    100% {opacity: 100;}
+}
+
+/* Standard syntax */
+@keyframes lastOpacity {
+    0% {opacity:  0;}
+    100% {opacity: 100;}
+}
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+.image-filler{
+    height: 100px;
+    width: 100px;
+    padding: 5%;
+}
+</style>
 <body>
-Hi Welcome to My page.
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+        <span class="w3-center w3-padding-large w3-xlarge w3-wide">
+            <p id="first-message">Hi!!</p>
+            <p id="second-message">I am Arnav.</p>
+            <p id="third-message">Welcome to my site</p>
+        </span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>Once an aggie always an aggie.</em></p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Arnav Kundu</b></p>
+      <img src="img/me.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>I am Arnav Kundu a graduate student at Texas A&M University, College Station. My major is Electrical and Computer Engineering and I am specializing in Information Sciences. Most of my work is related to application of
+      machine learning algorithms and customizing them. At present I am working on development of a neural network based cyber-intrusion detection algorithm
+      for smart grids. Alongwith that I am also a part of the Drillbotics team at Texas A&M and we are making a drilling bot which can detect the material it is
+      drilling through and then optimize its parameters to drill faster. I want to explore deeper into the domains of analytics and applied machine learning and
+      develop innovation solutions using my skillsets. </p>
+      <p>I am a cheerful and ethusiast individual. I love to work in teams because I believe collaboration leads to formation of cool ideas. Being a sportsman, I
+      love to stay active and love to experiment out my capabilities but exploring uncharted territories.</p>
+      <a href="">Click here</a> for a detailed resume.
+    </div>
+  </div>
+  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+  <p class="w3-wide"><i class="fa fa-camera"></i>Machine Learning</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Data Analytics</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Optimization</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+  </div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">2+ years</span><br>
+    Work Experience
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">10+</span><br>
+    Projects in Machine Learning
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">3.5+</span><br>
+    GPA
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">1+ years</span><br>
+    Volunteer Work
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">EXPERIENCE</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">MY WORK</h3>
+<br>
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+        <div class="pv-entity__logo company-logo">
+            <img class="lazy-image pv-entity__logo-img pv-entity__logo-img EntityPhoto-square-5 loaded" alt="Texas A&M" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAumAAAAJDFjMTEwZjIzLWJlZmItNDFmOS1hMzkwLWQzM2QwNWYxYTNiNw.png">
+        </div>
+    </div>
+    <div class="w3-col m9" style="text-align: left">
+        <span> <strong>Graduate Student</strong> - <i>Aug 2017 - Present</i></span>
+        <p>Department of Electrical and Computer Engineering with specialization in Information Sciences.</p>
+        <p>CGPA: 3.7</p>
+    </div>
+  </div>
+<br>
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+        <div class="pv-entity__logo company-logo">
+            <img class="lazy-image pv-entity__logo-img pv-entity__logo-img EntityPhoto-square-5 loaded" alt="Citi" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAMxAAAAJDVhNjBjYjJiLTQxYmYtNGFkZi1iMjI1LTEwZjlkMGFkZjVlOQ.png">
+        </div>
+    </div>
+    <div class="w3-col m9" style="text-align: left">
+        <span> <strong>Data Scientist</strong> - <i>Jul 2016 - Jul 2017</i></span>
+        <p>Designed marketing campaigns for Citibank Thailand by applying time-series forecasting and classification algorithms like SVM and KNN on spend patterns and other customer demographics.</p>
+        <p>Strategized customer outreach and base expansion with marketing teams by building statistical models on spend allocation to increase customer base by 3% every month for Citibank Thailand.</p>
+        <p>Designed and maintained ‘Covenant’ a campaign management framework with online dash-boarding and customer level performance tracking which helped the marketing teams to be updated with their portfolios.</p>
+        <p>Awarded the ARC Award in 2016 for optimizing ‘Covenant’ for Citibank Thailand which increased the campaign conversion rate by 12% in the last quarter of 2016.</p>
+    </div>
+  </div>
+<br>
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+        <div class="pv-entity__logo company-logo">
+            <img class="lazy-image pv-entity__logo-img pv-entity__logo-img EntityPhoto-square-5 loaded" alt="Citi" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAMxAAAAJDVhNjBjYjJiLTQxYmYtNGFkZi1iMjI1LTEwZjlkMGFkZjVlOQ.png">
+        </div>
+    </div>
+    <div class="w3-col m9" style="text-align: left">
+        <span> <strong>Application Developer</strong> - <i>Jul 2015 - Jul 2016</i></span>
+        <p>Developed packages like live trade status monitor, form generators for CitiFXPulse, an online FX trading platform.</p>
+        <p>Developed JavaScript based APIs for parsing server responses into interactive dashboards that led to a better user experience.</p>
+        <p>Enhanced rate receive and update service to reduce the latency of FX rate update from 20 microseconds to 8 microseconds.</p>
+    </div>
+  </div>
+<br>
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+        <div class="pv-entity__logo company-logo">
+            <img class="lazy-image pv-entity__logo-img pv-entity__logo-img EntityPhoto-square-5 loaded" alt="Finisar" src="https://media.glassdoor.com/sql/9446/finisar-squarelogo-1453940772697.png">
+        </div>
+    </div>
+    <div class="w3-col m9" style="text-align: left">
+        <span> <strong>Intern</strong> - <i>Jul 2014 - Aug 2014</i></span>
+        <p>Doubled the production per station by expediting the temperature settling process of opto-electronic trans-receivers by developing an algorithm to tune the PI parameters of the temperature controller.</p>
+        <p>Designed an architecture to interface multiple source-meters(Keithley-2400) to a computer.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64">
+     <h1 style="text-align: center">SKILLS</h1>
+<br>
+<div class="w3-row">
+    <div class="w3-quarter">
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/python.png" class="w3-container w3-center image-filler"><p><strong>Python</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/java.png" class="w3-container w3-center image-filler"><p><strong>Java</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/Matlab.png" class="w3-container w3-center image-filler"><p><strong>MATLAB</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/sas.png" class="w3-container w3-center image-filler"><p><strong>SAS</strong></p></div>
+    </div>
+   <div class="w3-quarter">
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/ml.png" class="w3-container w3-center image-filler"><p><strong>Machine Learning</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/hadoop.png" class="w3-container w3-center image-filler"><p><strong>Hadoop</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/hive.png" class="w3-container w3-center image-filler"><p><strong>HIVE</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/stats.jpg" class="w3-container w3-center image-filler"><p><strong>Statistics</strong></p></div>
+    </div>
+   <div class="w3-quarter">
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/sql.png" class="image-filler"><p><strong>SQL</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/excel.png" class="image-filler"><p><strong>Excel</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/tableau.gif" class="image-filler"><p><strong>Tableau</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/prob.png" class="image-filler"><p><strong>Probability</strong></p></div>
+    </div>
+   <div class="w3-quarter">
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/javascript.png" class="image-filler"><p><strong>JavaScript</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/html.png" class="image-filler"><p><strong>HTML5</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/css.png" class="image-filler"><p><strong>CSS3</strong></p></div>
+        <div class="w3-container w3-center w3-margin w3-border w3-border-grey w3-hover-light-grey"><img src="img/bootstrap.png" class="image-filler"><p><strong>Bootstrap</strong></p></div>
+    </div>
+</div>
+</div>
+
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">Contact</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <!-- Add Google Maps -->
+      <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> College Station, Texas, US<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +19797397337<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: <a href="mailto:arnav1993k@gmail.com">arnav1993k@gmail.com</a><br>
+        <a href="https://www.linkedin.com/in/arnavkundu-tamu/"><i class="fa fa-linkedin fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> LinkedIn: https://www.linkedin.com/in/arnavkundu-tamu/<br></a>
+      </div>
+      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>
