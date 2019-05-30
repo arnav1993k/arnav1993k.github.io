@@ -1,0 +1,51 @@
+data = '{"employment":\
+            [\
+                {   "logo":"src/icons/nvidia.png",\
+                    "organization":"Nvidia",\
+                    "title":"Deep Learning Research Intern",\
+                    "period":"Jan 2019 - Apr 2019",\
+                    "description":[\
+                        "Research and development of speech de-noising mechanisms forambient noise removal to improve speech recognition methods by 2% using semantic segmentation concepts",\
+                        "Improved the state of the art on noisy dataset, both in speed and accuracy using better regularization and mixed precision training with greedy decoding"\
+                        ]\
+                },\
+                {   "logo":"src/icons/apple.png",\
+                    "organization":"Apple Inc",\
+                    "title":"Machine Learning Intern",\
+                    "period":"May 2018 - Aug 2018",\
+                    "description":[\
+                        "Researched and developed deep learning solutions for predictive anomaly detection, forecasting, clustering and correlating millions of rows of time-series data in minutes against unsupervised methods which take hours (3 patents)",\
+                        "Reduced the training time of deep neural network models by 80% by implementing distributed Tensor-Flow framework on Apple infrastructure"\
+                        ]\
+                },\
+                {   "logo":"src/icons/citi.png",\
+                    "organization":"Citigroup Inc",\
+                    "title":"Data Scientist",\
+                    "period":"July 2015 - July 2017",\
+                    "description":[\
+                        "Designed models based on customer spend patterns and demographics to automate marketing campaign recommendation platform for retail banking marketing team",\
+                        "Developed a platform to enable marketing teams to create real-time dashboard to monitor and observe their respective portfolios"\
+                        ]\
+                }\
+            ],"projects":\
+            [\
+                {   "logo":"src/icons/nvidia.png",\
+                    "organization":"Nvidia",\
+                    "title":"Deep Learning Research Intern",\
+                    "period":"Jan 2019 - Apr 2019",\
+                    "description":[\
+                        "Research and development of speech de-noising mechanisms forambient noise removal to improve speech recognition methods by 2% using semantic segmentation concepts",\
+                        "Improved the state of the art on noisy dataset, both in speed and accuracy using better regularization and mixed precision training with greedy decoding"\
+                        ]\
+                },\
+                {   "logo":"src/icons/apple.png",\
+                    "organization":"Apple Inc",\
+                    "title":"Machine Learning Intern",\
+                    "period":"May 2018 - Aug 2018",\
+                    "description":[\
+                        "Researched and developed deep learning solutions for predictive anomaly detection, forecasting, clustering and correlating millions of rows of time-series data in minutes against unsupervised methods which take hours (3 patents)",\
+                        "Reduced the training time of deep neural network models by 80% by implementing distributed Tensor-Flow framework on Apple infrastructure"\
+                        ]\
+                }\
+            ]\
+        }';
